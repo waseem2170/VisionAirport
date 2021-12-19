@@ -59,9 +59,39 @@ Nu we onze data gecleaned hebben in de staging area is het de bedoeling dat de b
 
 2. Open het bestand "DWH.sql" in de folder DWH_queries (zie repo)
 3. Na het bestand is geopend in het management studio klik dan op "Execute"
+4. Doe hetzelfde voor het bestand "createFactVertrek.sql" en "createFactAankomst.sql"
+
+Als alles succesvol gelopen is zou je dimensies & fact tabellen moeten kunnen zien in de data warehouse database.
 
 ## SSIS-packages
 
+Nu we de scaffolding hebben gemaakt voor onze data warehouse gaan we deze opvullen met alle bruikbare data (cleaned data). Dit doen we aan de hand van SSIS packages. Pak hiervoor de TestVisionAirport.zip uit en open de solution in Visual Studio.
+
+Na dat de solution is geopend is het belangrijk dat we de verbinding met onze lokaal SQL server leggen.
+**Stappen die je moet nemen:**
+
+1. Verwijder de twee connectie die als bij default meekomen met het project
+
+![image](https://user-images.githubusercontent.com/57638471/146685526-4e30dc3a-fb7b-4aa1-beb1-1c58c5cae9c2.png)
+
+Voeg nu je eigen connecties toe met je lokaal SQL server.
+
+2. Rechtermuisklik op "Connection Managers"
+3. Klik op vervolgens op "New Connection Manager"
+4. Selecteer "OLEDB" als type connectie
+![image](https://user-images.githubusercontent.com/57638471/146685854-76f33c8f-82b4-4b6c-b3e3-c7472235bde2.png)
+5. Klik op "New"
+7. Geef je server naam in en druk op "OK"
+8. Selecteer de staging database "VisionAirport_staging"
+![image](https://user-images.githubusercontent.com/57638471/146685966-8235542c-a451-4172-b171-07e7ebab675d.png)
+
+Herhaal de vorige stappen om nu een verbinding te leggen met de data warehouse genaamd "VisionAirport_DWH".
+Na je dit gedaan hebt kunnen we aan de slag met de SSIS-packages. Zorg ervoor dat voor elke package de verbinding is gelegd met je database door gebruik te maken van de juiste connection manager.
+
+Als je dat gedaan hebt, klik op de main package en voer het uit. Dit package zal alle andere packages in de juiste volgorde uitvoeren. Als dit succesvol verlopen is dubbelcheck door te zien of er nu data is in de data warehouse door in je management studio te controleren.
+
+
+## Power-BI dashboard
 
 
 
