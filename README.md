@@ -78,11 +78,14 @@ Voeg nu je eigen connecties toe met je lokaal SQL server.
 
 2. Rechtermuisklik op "Connection Managers"
 3. Klik op vervolgens op "New Connection Manager"
-4. Selecteer "OLEDB" als type connectie
+4. Selecteer "OLEDB" als type connectie en klik op "Next"
+
 ![image](https://user-images.githubusercontent.com/57638471/146685854-76f33c8f-82b4-4b6c-b3e3-c7472235bde2.png)
-5. Klik op "New"
+
+5. Klik vervolgens op "New"
 7. Geef je server naam in en druk op "OK"
 8. Selecteer de staging database "VisionAirport_staging"
+
 ![image](https://user-images.githubusercontent.com/57638471/146685966-8235542c-a451-4172-b171-07e7ebab675d.png)
 
 Herhaal de voorgaande stappen om nu een verbinding te leggen met de data warehouse genaamd "VisionAirport_DWH". Na je dit gedaan hebt kunnen we aan de slag met de SSIS-packages. Zorg ervoor dat voor elke package de verbinding is gelegd met je database door gebruik te maken van de juiste connection manager.
