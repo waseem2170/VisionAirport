@@ -15,7 +15,7 @@ Omdat het manueel importeren van de geleverde bronbestanden (flat files) een aan
 ![image](https://user-images.githubusercontent.com/57638471/146682177-3ad72f0d-66c3-429c-aa1a-3bab344f7284.png)
    
 3. Klik op "Next" 
-4. Browse voor het bestand "Staging_area.bapcpac" (zie repo).
+4. Browse voor het bestand "Staging_area.bapcpac" in het folde "StagingArea" (zie repo).
       
 ![image](https://user-images.githubusercontent.com/57638471/146683177-a48c1de1-32e4-4c1c-b367-ab97a825d51d.png)
 
@@ -32,12 +32,14 @@ Omdat het manueel importeren van de geleverde bronbestanden (flat files) een aan
 Om zeker te zijn of de stappen correct zijn gebeurd kijk na dat de database tabellen heeft en/of er data zit in de tabellen die beginnen met "RAW".
 Na dit gelukt is kunnen we beginnen met het cleanen van de data. Dat doen we door gebruik te maken van het script "CleaningScript.sql".
 
-## Script uitvoeren voor het cleanen van de data
+## Data cleanen
+
+In het folder "StagingArea" is er een cleaning script voorzien die we gaan gebruiken om alle bruikbare data te exporteren naar onze data warehouse later meer hierover.
 
 **Stappen die je moet nemen:**
 
-1. Open het bestand "CleaningScript.sql" (zie repo)
-2. Klik op "Execute"
+1. Open het bestand "CleaningScript.sql" in de folder "StagingArea" (zie repo)
+2. Na het bestand is geopend in het management studio klik dan op "Execute"
 
 ![image](https://user-images.githubusercontent.com/57638471/146683865-1d2e6744-155a-4df7-a3df-0d6e8610bc64.png)
 
@@ -47,9 +49,16 @@ Als alles gelukt is zou je het volgende onderaan je management studio moeten zie
 
 ![image](https://user-images.githubusercontent.com/57638471/146683949-93cf1a6a-c64c-4362-a95e-1984defb7e44.png)
 
-## Het opzetten van de datawarehouse
+## Het opzetten van de data warehouse
 
-Nu we onze data gecleaned hebben in de staging area is het de bedoeling dat de bruikbare data overgezet wordt naar onze datawarehouse database. Dit doen we aan de hand van SSIS-packages. Vooraleer we dat doen moeten we eerst een lege database aanmaken en onze dimensies & fact tabellen aanmaken. Hiervoor voeren
+Nu we onze data gecleaned hebben in de staging area is het de bedoeling dat de bruikbare data overgezet wordt naar onze data warehouse database. Dit doen we aan de hand van SSIS-packages. Vooraleer we dat doen moeten we eerst een lege database aanmaken en onze dimensies & fact tabellen aanmaken. Hiervoor voeren de volgende stappen uit.
+
+1. Maak een nieuwe database aan en noem het "VisionAirport_DWH".
+
+![image](https://user-images.githubusercontent.com/57638471/146685185-ca9cbf6e-1200-4420-bade-98ee7a7fb78a.png)
+
+2. Open het bestand "DWH.sql" in de folder DWH_queries (zie repo)
+3. Na het bestand is geopend in het management studio klik dan op "Execute"
 
 ## SSIS-packages
 
