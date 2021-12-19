@@ -5,11 +5,18 @@ Laten we beginnen!
 
 ## het opzetten van de staging area
 
-**stap 1** 
+**Stap 1** 
 
-Maak een leeg staging database. 
+Omdat het manueel importeren van de geleverde bronbestanden (flat files) een aanzienlijk tijd in beslag zullen nemen wordt er bij dit project een back-up bestand meegeleverd genaamd "Staging_area.bapcpac". Dit bestand gebruik je om een lege database aan te maken, te scaffolden en op te vullen met ruwe data.
 
-![image](https://user-images.githubusercontent.com/57638471/146681883-793b9d01-c6e3-4c4a-af78-14533916f62c.png)
+    Stappen die je moet nemen:
+      1. Rechtermuisklik op het folder "Databases" in de object explorer.
+      2. Klik op "Import Data-Tier Application..."
+      
+      ![image](https://user-images.githubusercontent.com/57638471/146682177-3ad72f0d-66c3-429c-aa1a-3bab344f7284.png)
+
+Klik "next" en je database wordt aangemaakt. Nu we dit hebben gedaan kunnen we onze RAW bestanden importeren
+
 
 
 
