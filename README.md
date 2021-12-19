@@ -85,8 +85,7 @@ Voeg nu je eigen connecties toe met je lokaal SQL server.
 8. Selecteer de staging database "VisionAirport_staging"
 ![image](https://user-images.githubusercontent.com/57638471/146685966-8235542c-a451-4172-b171-07e7ebab675d.png)
 
-Herhaal de vorige stappen om nu een verbinding te leggen met de data warehouse genaamd "VisionAirport_DWH".
-Na je dit gedaan hebt kunnen we aan de slag met de SSIS-packages. Zorg ervoor dat voor elke package de verbinding is gelegd met je database door gebruik te maken van de juiste connection manager.
+Herhaal de vorige stappen om nu een verbinding te leggen met de data warehouse genaamd "VisionAirport_DWH". Na je dit gedaan hebt kunnen we aan de slag met de SSIS-packages. Zorg ervoor dat voor elke package de verbinding is gelegd met je database door gebruik te maken van de juiste connection manager.
 
 Als je dat gedaan hebt, klik op de main package en voer het uit. Dit package zal alle andere packages in de juiste volgorde uitvoeren. Als dit succesvol verlopen is dubbelcheck door te zien of er nu data is in de data warehouse door in je management studio te controleren.
 
