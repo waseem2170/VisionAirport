@@ -8,6 +8,7 @@ Laten we beginnen!
 **stap 1** 
 
 Maak een leeg staging database. 
+
 ![image](https://user-images.githubusercontent.com/57638471/146681883-793b9d01-c6e3-4c4a-af78-14533916f62c.png)
 
 
