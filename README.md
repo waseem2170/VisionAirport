@@ -125,7 +125,8 @@ Het dashboard geeft onderstaande zaken op een visuele manieren weer:
 12.	Operatie Score op 10
 
 ## Dashboard
-![image](https://user-images.githubusercontent.com/61239203/146784228-1b3f5214-e774-4557-8dc8-b9925b55960c.png)
+![image](https://user-images.githubusercontent.com/57638471/146822705-da6b50d5-4327-42cd-9f70-7706799c3ac5.png)
+
 
 
 
