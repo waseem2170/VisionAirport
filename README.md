@@ -53,7 +53,7 @@ Als alles gelukt is zou je het volgende onderaan je management studio moeten zie
 
 Nu we onze data gecleaned hebben in de staging area is het de bedoeling dat de bruikbare data overgezet wordt naar onze data warehouse database. Dit doen we aan de hand van SSIS-packages. Vooraleer we dat doen moeten we eerst een lege database aanmaken en daarin onze dimensies & fact tabellen aanmaken. Hiervoor voeren de volgende stappen uit.
 
-1. Open het bestand "DWH.sql" in de folder DWH_queries (zie repo)
+1. Open het bestand "DWH.sql" in de folder "Datawarehouse" (zie repo)
 2. klik op "Execute" na het bestand is ingeladen in management studio
 
 Als alles goed is verlopen zou je dimensies & fact tabellen moeten kunnen zien in de data warehouse database.
