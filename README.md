@@ -24,7 +24,7 @@ Omdat het manueel importeren van de geleverde bronbestanden (flat files) een aan
 
 ![image](https://user-images.githubusercontent.com/57638471/146683257-0f0c7f75-7cb0-4b7b-80e3-4c11b63edff4.png)
  
-   > Let op: De database naam moet overeen komen met de eerder gegeven naam om later fouten te vermijden bij het uitvoeren van de scripts. 
+   > Let op: De databasenaam moet overeen komen met de eerder gegeven naam om later fouten te vermijden bij het uitvoeren van de scripts. 
 
  7. Klik op "Next"
  8. Klik op "Finish"
@@ -37,7 +37,7 @@ Om zeker te zijn dat de stappen correct zijn uitgevoerd, kijk je best na dat de 
 
 ## Data cleanen
 
-In de folder "StagingArea" wordt een cleaning script voorzien die we gaan gebruiken om alle bruikbare data te exporteren naar onze data warehouse. Later meer hierover.
+In de folder "StagingArea" wordt een cleaning script voorzien die we gaan gebruiken om alle bruikbare data te exporteren naar de data warehouse. Later meer hierover.
 
 **Stappen die je moet nemen:**
 
@@ -48,16 +48,16 @@ In de folder "StagingArea" wordt een cleaning script voorzien die we gaan gebrui
 
   > Let op: Het kan even duren voor het script klaar is.
 
-Als alles gelukt is, zou je het volgende onderaan je Management Studio moeten zien:
+Als alles gelukt is, zou je het volgende onderaan in Management Studio moeten zien:
 
 ![image](https://user-images.githubusercontent.com/57638471/146683949-93cf1a6a-c64c-4362-a95e-1984defb7e44.png)
 
 ## Het opzetten van de data warehouse
 
-Nu we onze data gecleaned hebben in de staging area is het de bedoeling dat de bruikbare data overgezet wordt naar onze data warehouse database. Dit doen we aan de hand van SSIS-packages. Vooraleer we dat doen moeten we eerst een script uitvoeren voor het aanmaken van onze data warehouse en daarin onze dimensies & fact tabellen. Hiervoor voeren de volgende stappen uit.
+Nu we onze data gecleaned hebben in de staging area is het de bedoeling dat de bruikbare data overgezet wordt naar de data warehouse database. De data zal nog verschillende transformaties moeten ondergaan. Dit doen we aan de hand van SSIS-packages. Vooraleer we de packages kunnen uitvoeren, zal eerst een script moeten worden uitgevoerd om de structuur van de data warehouse-tabellen aan te maken. Hiervoor voeren we de volgende stappen uit:
 
 1. Open het bestand "DWH.sql" in de folder "Datawarehouse" (zie repo)
-2. klik op "Execute" na het bestand is ingeladen in management studio
+2. klik op "Execute" nadat het bestand is ingeladen in Management Studio
 
 Als alles goed is verlopen zou je dimensies & fact tabellen moeten kunnen zien in de data warehouse database.
 
@@ -65,7 +65,7 @@ Als alles goed is verlopen zou je dimensies & fact tabellen moeten kunnen zien i
 
 Nu we de nodige scaffolding hebben uitgevoerd voor de data warehouse, gaan we deze opvullen met alle bruikbare data (cleaned data). Dit doen we aan de hand van SSIS packages. Pak hiervoor de VisionAirport.zip uit en open de solution in Visual Studio.
 
-Nadat de solution is geopend, is het belangrijk om de verbinding met onze lokaal SQL server te leggen.
+Nadat de solution is geopend, is het belangrijk om de verbinding met onze lokale SQL server te leggen.
 **Stappen die je moet nemen:**
 
 1. Verwijder de twee connecties die als bij default meekomen met het project.
@@ -86,15 +86,15 @@ Voeg nu je eigen connecties toe met je lokale SQL server.
 
 ![image](https://user-images.githubusercontent.com/57638471/146685966-8235542c-a451-4172-b171-07e7ebab675d.png)
 
-Herhaal de voorgaande stappen om nu een verbinding te leggen met de data warehouse genaamd "VisionAirport_DWH". Nadat je dit gedaan hebt, kunnen we aan de slag met de SSIS-packages. Zorg ervoor dat in elke package de verbinding is gelegd met je database door gebruik te maken van de juiste connection manager.
+Herhaal de voorgaande stappen om verbinding te maken met de data warehouse genaamd "VisionAirport_DWH". Nadat je dit gedaan hebt, kunnen we aan de slag met de SSIS-packages. Zorg ervoor dat in elke package de verbinding is gelegd met je database door gebruik te maken van de juiste connection manager.
 
-Als je dat gedaan hebt, klik op de main package en voer het uit. Dit package zal alle andere packages in de juiste volgorde uitvoeren. Wanneer deze stap succesvol uitgevoerd werd, zouden de tabellen in de VisionAirport_DWH database gevuld moeten zijn met dat. Controleer dit adhv de Management Studio.
+Als je dat gedaan hebt, klik op de main package en voer het uit. Deze package zal alle andere packages in de juiste volgorde uitvoeren. Wanneer deze stap succesvol uitgevoerd werd, zouden de tabellen in de VisionAirport_DWH database gevuld moeten zijn met data. Controleer dit adhv de Management Studio.
 
 
 ## Power-BI dashboard
-Via de tool power BI hebben we de gegevens die in onze DWH werden opgeslagen visueel willen tonen op een dashboard. Op het dashboard worden een aantal resultaten getoond die naar onze mening van nut kunnen zijn om de grote hoeveelheid data makkelijker te kunnen interpreteren. Je kan het dashboard vinden en downloaden via de link die beschikbaar is in het bestand "PowerBIProject_Link.txt". Het project kan enkel geopend worden met de Power BI desktop versie dus zie dat je het geïnstalleerd hebt. In het Power BI project staan er al standaard alle tabellen van de data warehouse in die wij hebben toegevoegd.
+Via de tool power BI hebben we de gegevens die in onze DWH werden opgeslagen visueel willen tonen op een dashboard. Op het dashboard worden een aantal resultaten getoond die naar onze mening van nut kunnen zijn om de grote hoeveelheid data makkelijker te kunnen interpreteren. Je kan het dashboard vinden en downloaden via de link die beschikbaar is in het bestand "PowerBIProject_Link.txt". Het project kan enkel geopend worden met de Power BI desktop versie, dus zorg dat die geïnstalleerd werd. Wanneer je het bijgevoegde project opent, zul je zien dat alle nodige tabellen al ingeladen zijn.
 
-Als je graag wil verbinden met je eigen lokale SQL server en nieuwe gegevens wilt ophalen kan dit nog altijd in Power BI via het knop “Gegevens ophalen ” of “SQL server” :
+Als je graag wil verbinden met je eigen lokale SQL server en nieuwe gegevens wilt ophalen kan dit nog altijd in Power BI via de knop “Gegevens ophalen ” of “SQL server” :
 
 ![image](https://user-images.githubusercontent.com/61239203/146779999-4a9207e7-1a32-4733-8cbe-f3ce2fa1b049.png)
 
