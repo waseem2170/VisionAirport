@@ -92,8 +92,7 @@ Als je dat gedaan hebt, klik op de main package en voer het uit. Dit package zal
 
 
 ## Power-BI dashboard
-Via de tool power BI hebben we de gegevens die in onze DWH werden opgeslagen visueel willen tonen op een dashboard. Op het dashboard worden een aantal resultaten getoond die naar onze mening van nut kunnen zijn om de grote hoeveelheid data makkelijker te kunnen interpreteren. 
-Je kan het dashboard vinden en downloaden op de link die beschikbaar is via het bestand "PowerBIProject_Link.txt". Het project kan enkel geopend worden met Power BI desktop desktop versie dus zie dat je het geïnstalleerd hebt. In het Power BI project staan er al standaard alle tabellen van de data warehouse in die wij hebben toegevoegd.
+Via de tool power BI hebben we de gegevens die in onze DWH werden opgeslagen visueel willen tonen op een dashboard. Op het dashboard worden een aantal resultaten getoond die naar onze mening van nut kunnen zijn om de grote hoeveelheid data makkelijker te kunnen interpreteren. Je kan het dashboard vinden en downloaden via de link die beschikbaar is in het bestand "PowerBIProject_Link.txt". Het project kan enkel geopend worden met Power BI desktop desktop versie dus zie dat je het geïnstalleerd hebt. In het Power BI project staan er al standaard alle tabellen van de data warehouse in die wij hebben toegevoegd.
 
 Als je graag wil verbinden met je eigen lokaal SQL server en nieuwe gegevens wilt ophalen kan dit nog altijd in Power BI via het knop “Gegevens ophalen ” of “SQL server” :
 
