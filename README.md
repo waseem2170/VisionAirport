@@ -100,15 +100,29 @@ Het is belangrijk dat voordat je het dashboard opent, je power BI desktop instal
 Als je graag aanpassingen wilt maken of gegevens wilt importeren kan dit ook nog altijd in Power BI via: 
 “Gegevens ophalen ”  “SQL server” :
 ![image](https://user-images.githubusercontent.com/61239203/146779999-4a9207e7-1a32-4733-8cbe-f3ce2fa1b049.png)
-
+<br />
 Voer de servernaam in van je SQL server & druk “OK” :
 ![image](https://user-images.githubusercontent.com/61239203/146780055-a491d0e6-9e2b-4242-a50e-89a506b9adc6.png)
-
+<br />
 Klap door op het pijltje te drukken de database open die je wilt gebruiken. In ons voorbeeld is dit “VisionAirport_DWH”, selecteer welke tabellen je mee wilt overnemen om vervolgens te gaan gebruiken. Druk “Laden”:
 ![image](https://user-images.githubusercontent.com/61239203/146780113-0a8bf882-9eea-43e4-91fa-59e17e209843.png)
-
+<br />
 Als dit is gelukt kan je bij “Velden” al je tabellen zien: 
 ![image](https://user-images.githubusercontent.com/61239203/146780163-614475d4-31e0-4b0a-981c-97a35e7b2063.png)
+<br />
+Het dashboard geeft onderstaande zaken op een visuele manieren weer: 
+1.	Flights per month
+2.	Flights per country
+3.	Aantal Airlines per country (top 5)
+4.	Totaal van aantal vertrokken vluchten
+5.	Totaal van aantal aangekomen vluchten
+6.	Gemiddelde vertraging bij het vertrek
+7.	Gemiddelde vertraging bij aankomst
+8.	klanttevredenheid in relatie tot vertraging
+9.	Aantal vliegtuigtypes 
+10.	Totaal van aantal vlieghavens 
+11.	Faciliteit score op 10
+12.	Operatie Score op 10
 
 
 
