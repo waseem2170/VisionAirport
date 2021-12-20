@@ -29,8 +29,11 @@ Omdat het manueel importeren van de geleverde bronbestanden (flat files) een aan
  7. Klik op "Next"
  8. Klik op "Finish"
 
-Om zeker te zijn dat de stappen correct zijn uitgevoerd, kijk je best na dat de database tabellen bevat en/of er data zit in de tabellen die beginnen met "RAW".
-Nadat dit gecontroleerd is, kunnen we beginnen met het cleanen van de data. Dat doen we door gebruik te maken van het script "CleaningScript.sql" (zie verder).
+Om zeker te zijn dat de stappen correct zijn uitgevoerd, kijk je best na dat de database verschillende tabellen bevat en/of er data zit in de tabellen die beginnen met "RAW". Nadat dit gecontroleerd is, kunnen we beginnen met het cleanen van de data. Dat doen we door gebruik te maken van het script "CleaningScript.sql" (zie verder).
+
+> Tip: Zie je de tabellen niet? Druk dan zeker op de refresh knop op tabel niveau!
+
+![image](https://user-images.githubusercontent.com/57638471/146793927-3a91330d-70db-4b19-bc58-a3440bbe49b9.png)
 
 ## Data cleanen
 
@@ -51,7 +54,7 @@ Als alles gelukt is, zou je het volgende onderaan je Management Studio moeten zi
 
 ## Het opzetten van de data warehouse
 
-Nu we onze data gecleaned hebben in de staging area is het de bedoeling dat de bruikbare data overgezet wordt naar onze data warehouse database. Dit doen we aan de hand van SSIS-packages. Vooraleer we dat doen moeten we eerst een lege database aanmaken en daarin onze dimensies & fact tabellen aanmaken. Hiervoor voeren de volgende stappen uit.
+Nu we onze data gecleaned hebben in de staging area is het de bedoeling dat de bruikbare data overgezet wordt naar onze data warehouse database. Dit doen we aan de hand van SSIS-packages. Vooraleer we dat doen moeten we eerst een script uitvoeren voor het aanmaken van onze data warehouse en daarin onze dimensies & fact tabellen. Hiervoor voeren de volgende stappen uit.
 
 1. Open het bestand "DWH.sql" in de folder "Datawarehouse" (zie repo)
 2. klik op "Execute" na het bestand is ingeladen in management studio
@@ -60,7 +63,7 @@ Als alles goed is verlopen zou je dimensies & fact tabellen moeten kunnen zien i
 
 ## SSIS-packages
 
-Nu we de nodige scaffolding hebben uitgevoerd voor de data warehouse, gaan we deze opvullen met alle bruikbare data (cleaned data). Dit doen we aan de hand van SSIS packages. Pak hiervoor de TestVisionAirport.zip uit en open de solution in Visual Studio.
+Nu we de nodige scaffolding hebben uitgevoerd voor de data warehouse, gaan we deze opvullen met alle bruikbare data (cleaned data). Dit doen we aan de hand van SSIS packages. Pak hiervoor de VisionAirport.zip uit en open de solution in Visual Studio.
 
 Nadat de solution is geopend, is het belangrijk om de verbinding met onze lokaal SQL server te leggen.
 **Stappen die je moet nemen:**
@@ -90,21 +93,24 @@ Als je dat gedaan hebt, klik op de main package en voer het uit. Dit package zal
 
 ## Power-BI dashboard
 Via de tool power BI hebben we de gegevens die in onze DWH werden opgeslagen visueel willen tonen op een dashboard. Op het dashboard worden een aantal resultaten getoond die naar onze mening van nut kunnen zijn om de grote hoeveelheid data makkelijker te kunnen interpreteren. 
-Het dashboard bijgevoegd ind it project, kan enkel geopend worden wanneer power BI desktop geïnstalleerd staat op je computer. Je kan het dashboard vinden en downloaden op de link die beschikbaar is via de PowerBIProject_Link.txt. 
+Je kan het dashboard vinden en downloaden op de link die beschikbaar is via het bestand "PowerBIProject_Link.txt". Het project kan enkel geopend worden met Power BI desktop desktop versie dus zie dat je het geïnstalleerd hebt. In het Power BI project staan er al standaard alle tabellen van de data warehouse in die wij hebben toegevoegd.
 
-Als je graag aanpassingen wilt doen of gegevens wilt importeren kan dit ook nog altijd in Power BI via: 
-“Gegevens ophalen ”  “SQL server” : <br />
+Als je graag wil verbinden met je eigen lokaal SQL server en nieuwe gegevens wilt ophalen kan dit nog altijd in Power BI via het knop “Gegevens ophalen ” of “SQL server” :
+
 ![image](https://user-images.githubusercontent.com/61239203/146779999-4a9207e7-1a32-4733-8cbe-f3ce2fa1b049.png)
 
-Voer de servernaam in van je SQL server & druk “OK” :<br />
+Voer de servernaam in van je SQL server & druk “OK” :
+
 ![image](https://user-images.githubusercontent.com/61239203/146780055-a491d0e6-9e2b-4242-a50e-89a506b9adc6.png)
-<br />
-Klap de database open die je wilt gebruiken door op het pijltje te drukken. In ons voorbeeld is dit “VisionAirport_DWH”. Selecteer welke tabellen je mee wilt overnemen om vervolgens te gaan gebruiken. Druk “Laden”:<br />
+
+Klap de database open die je wilt gebruiken door op het pijltje te drukken. In ons voorbeeld is dit “VisionAirport_DWH”. Selecteer welke tabellen je mee wilt overnemen om vervolgens te gaan gebruiken. Druk “Laden”:
+
 ![image](https://user-images.githubusercontent.com/61239203/146780113-0a8bf882-9eea-43e4-91fa-59e17e209843.png)
-<br />
-Als dit is gelukt kan je bij “Velden” al je tabellen zien: <br />
+
+Als dit is gelukt kan je bij “Velden” al je tabellen zien:
+
 ![image](https://user-images.githubusercontent.com/61239203/146780163-614475d4-31e0-4b0a-981c-97a35e7b2063.png)
-<br />
+
 Het dashboard geeft onderstaande zaken op een visuele manieren weer: 
 1.	Vluchten per maand
 2.	Vluchten per land
@@ -119,6 +125,7 @@ Het dashboard geeft onderstaande zaken op een visuele manieren weer:
 11.	Faciliteit score op 10
 12.	Operatie Score op 10
 
+## Dashboard
 ![image](https://user-images.githubusercontent.com/61239203/146784228-1b3f5214-e774-4557-8dc8-b9925b55960c.png)
 
 
