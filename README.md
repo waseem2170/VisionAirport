@@ -123,6 +123,9 @@ Het dashboard geeft onderstaande zaken op een visuele manieren weer:
 10.	Totaal van aantal vlieghavens 
 11.	Faciliteit score op 10
 12.	Operatie Score op 10
+<br />
+![image](https://user-images.githubusercontent.com/61239203/146784228-1b3f5214-e774-4557-8dc8-b9925b55960c.png)
+
 
 
 
