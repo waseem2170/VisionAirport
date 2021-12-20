@@ -29,8 +29,12 @@ Omdat het manueel importeren van de geleverde bronbestanden (flat files) een aan
  7. Klik op "Next"
  8. Klik op "Finish"
 
-Om zeker te zijn of de stappen correct zijn gebeurd kijk je liefts na dat de database tabellen heeft en/of er data zit in de tabellen die beginnen met "RAW".
+Controleer zeker of de tabellen correct zijn aangemaakt in de staging database en kijk ook na of de tabellen die beginnen met "RAW" ook data bevatten.
 Na dit gecontroleerd is kunnen we beginnen met het cleanen van de data. Dat doen we door gebruik te maken van het script "CleaningScript.sql" (zie verder).
+
+> Let op: Zie je de tabellen niet? Refresh zeker de tabellen op folder niveau!
+
+![image](https://user-images.githubusercontent.com/57638471/146790660-2cc7c296-a632-4109-9ed8-adc043b44f63.png)
 
 ## Data cleanen
 
@@ -39,7 +43,7 @@ In het folder "StagingArea" is er een cleaning script voorzien die we gaan gebru
 **Stappen die je moet nemen:**
 
 1. Open het bestand "CleaningScript.sql" in de folder "StagingArea" (zie repo)
-2. Na het bestand is geopend in het management studio klik dan op knop "Execute"
+2. Na het bestand is geopend in het management studio klik dan op het knop "Execute"
 
 ![image](https://user-images.githubusercontent.com/57638471/146683865-1d2e6744-155a-4df7-a3df-0d6e8610bc64.png)
 
@@ -60,7 +64,7 @@ Als alles goed is verlopen zou je dimensies & fact tabellen moeten kunnen zien i
 
 ## SSIS-packages
 
-Nu we de nodige scaffolding hebben gedaan voor onze data warehouse gaan we deze opvullen met alle bruikbare data (cleaned data). Dit doen we aan de hand van SSIS packages. Pak hiervoor de TestVisionAirport.zip uit en open de solution in Visual Studio.
+Nu we de nodige scaffolding hebben gedaan voor onze data warehouse gaan we deze opvullen met alle bruikbare data (cleaned data). Dit doen we aan de hand van SSIS packages. Pak hiervoor de VisionAirport.zip uit en open de solution in Visual Studio.
 
 Na dat de solution is geopend is het belangrijk dat we de verbinding met onze lokaal SQL server leggen.
 **Stappen die je moet nemen:**
@@ -83,7 +87,7 @@ Voeg nu je eigen connecties toe met je lokaal SQL server.
 
 ![image](https://user-images.githubusercontent.com/57638471/146685966-8235542c-a451-4172-b171-07e7ebab675d.png)
 
-Herhaal de voorgaande stappen om nu een verbinding te leggen met de data warehouse genaamd "VisionAirport_DWH". Na je dit gedaan hebt kunnen we aan de slag met de SSIS-packages. Zorg ervoor dat voor elke package de verbinding is gelegd met je database door gebruik te maken van de juiste connection manager.
+Herhaal de voorgaande stappen om nu een verbinding te leggen met de data warehouse genaamd "VisionAirport_DWH" die we gemaakt hadden. Na je dit gedaan hebt kunnen we aan de slag met het uitvoeren van de SSIS-packages. Zorg ervoor dat voor elke package de verbinding is gelegd met je database door gebruik te maken van de juiste connection manager.
 
 Als je dat gedaan hebt, klik op de main package en voer het uit. Dit package zal alle andere packages in de juiste volgorde uitvoeren. Als dit succesvol verlopen is dubbelcheck door te zien of er nu data is in de data warehouse door dit in de management studio te controleren.
 
